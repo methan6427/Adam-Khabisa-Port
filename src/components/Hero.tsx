@@ -1,10 +1,12 @@
 
 import React, { useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { gsap } from 'gsap';
 
 const Hero = () => {
   const heroRef = useRef<HTMLElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
+  const photoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Create floating particles effect
@@ -28,6 +30,36 @@ const Hero = () => {
     };
 
     const interval = setInterval(createParticle, 300);
+
+    // GSAP Animation for the photo
+    if (photoRef.current) {
+      gsap.fromTo(photoRef.current, 
+        {
+          y: 100,
+          opacity: 0,
+          scale: 0.8
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scale: 1,
+          duration: 1.5,
+          ease: "power3.out",
+          delay: 0.5
+        }
+      );
+
+      // Floating animation for the photo
+      gsap.to(photoRef.current, {
+        y: -20,
+        duration: 3,
+        ease: "power1.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 2
+      });
+    }
+
     return () => clearInterval(interval);
   }, []);
 
@@ -49,6 +81,20 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="space-y-6 animate-fade-in">
+          {/* Photo */}
+          <div className="flex justify-center mb-8">
+            <div 
+              ref={photoRef}
+              className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border-4 border-cyan-400/30 flex items-center justify-center overflow-hidden"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                alt="Adam Khabisa"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+          </div>
+
           <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             <span className="block text-white">Hi, I'm</span>
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">

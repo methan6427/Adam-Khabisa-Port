@@ -1,14 +1,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Code, Database, Palette, Smartphone } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const aboutRef = useRef<HTMLElement>(null);
-  const photoRef = useRef<HTMLDivElement>(null);
   const [skillsVisible, setSkillsVisible] = useState(false);
 
   const skills = [
@@ -36,39 +31,6 @@ const About = () => {
       observer.observe(aboutRef.current);
     }
 
-    // GSAP Animation for the photo
-    if (photoRef.current) {
-      gsap.fromTo(photoRef.current, 
-        {
-          y: 100,
-          opacity: 0,
-          scale: 0.8
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: 1.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: aboutRef.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Floating animation for the photo
-      gsap.to(photoRef.current, {
-        y: -20,
-        duration: 3,
-        ease: "power1.inOut",
-        yoyo: true,
-        repeat: -1
-      });
-    }
-
     return () => observer.disconnect();
   }, []);
 
@@ -82,20 +44,6 @@ const About = () => {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Passionate about creating engaging digital experiences through code
           </p>
-        </div>
-
-        {/* Photo in the middle */}
-        <div className="flex justify-center mb-16">
-          <div 
-            ref={photoRef}
-            className="w-64 h-64 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border-4 border-cyan-400/30 flex items-center justify-center overflow-hidden"
-          >
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
-              alt="Adam Khabisa"
-              className="w-full h-full object-cover rounded-full"
-            />
-          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
