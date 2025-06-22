@@ -170,7 +170,7 @@ const Hero = () => {
               className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border-4 border-cyan-400/30 flex items-center justify-center overflow-hidden cyan-glow animate-glow-pulse"
             >
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                src="https://media.licdn.com/dms/image/v2/D4E03AQENtvMLbvrSFA/profile-displayphoto-shrink_800_800/B4EZQUrGFGHgAg-/0/1735513630898?e=1756339200&v=beta&t=krsflQBwsmVhnW86J5DFEohDZqxYFRKh3njhGs5MSxE" 
                 alt="Adam Khabisa"
                 className="w-full h-full object-cover rounded-full"
               />

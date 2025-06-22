@@ -36,32 +36,26 @@ const Contact = () => {
     }, 1000);
   };
 
-  const contactInfo = [
+ const contactInfo = [
     {
       icon: Mail,
       title: "Email",
-      value: "adam.khabisa@email.com",
-      href: "mailto:adam.khabisa@email.com"
+      value: "adamkh0698@gmail.com",
+      href: "mailto:adamkh0698@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      value: "Available for Remote Work",
-      href: "#"
+      value: "+970593639342",
+      href: "tel:+970593639342"
     }
   ];
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub", color: "hover:text-slate-400" },
-    { icon: Linkedin, href: "#", label: "LinkedIn", color: "hover:text-blue-400" },
-    { icon: Facebook, href: "#", label: "Facebook", color: "hover:text-blue-600" },
-    { icon: Instagram, href: "#", label: "Instagram", color: "hover:text-pink-400" }
+    { icon: Github, href: "https://github.com/methan6427", label: "GitHub", color: "hover:text-gray-400" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/adam-khabisa-4a9677279/", label: "LinkedIn", color: "hover:text-blue-400" },
+    { icon: Facebook, href: "https://www.facebook.com/adam.khabisa.64", label: "Facebook", color: "hover:text-blue-600" },
+    { icon: Instagram, href: "https://www.instagram.com/methan6427/", label: "Instagram", color: "hover:text-pink-400" }
   ];
 
   return (
