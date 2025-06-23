@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Instagram, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,21 +21,45 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // EmailJS integration (you'll need to configure this with your EmailJS account)
-    // For now, simulating the form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
-  };
+  const serviceID = 'service_Adport';
+  const templateID = 'template_ry4i4pb';
+  const publicKey = 'RlY99OaNDBHpqXxkj';
+
+  emailjs
+    .send(
+      serviceID,
+      templateID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      publicKey
+    )
+    .then(
+      () => {
+        toast({
+          title: 'Message Sent!',
+          description: "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setIsSubmitting(false);
+      },
+      (error) => {
+        toast({
+          title: 'Error Sending Message',
+          description: 'Something went wrong. Please try again later.',
+        });
+        console.error('EmailJS Error:', error);
+        setIsSubmitting(false);
+      }
+    );
+};
 
  const contactInfo = [
     {

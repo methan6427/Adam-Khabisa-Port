@@ -6,67 +6,108 @@ const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "Modern React-based e-commerce platform with cart functionality, user authentication, and payment integration.",
-      technologies: ["React", "JavaScript", "CSS", "HTML"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "Web Development"
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team features.",
-      technologies: ["React", "CSS", "JavaScript", "HTML"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "Web Development"
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description: "Personal portfolio website showcasing projects and skills with smooth animations and responsive design.",
-      technologies: ["React", "CSS", "JavaScript", "HTML"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "UI/UX Design"
-    },
-    {
-      id: 4,
-      title: "Weather Dashboard",
-      description: "Real-time weather dashboard with location-based forecasts, interactive maps, and weather alerts.",
-      technologies: ["React", "JavaScript", "CSS", "HTML"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "Web Development"
-    },
-    {
-      id: 5,
-      title: "Java Desktop App",
-      description: "Desktop application built with Java and JavaFX for data management and visualization.",
-      technologies: ["Java", "JavaFX", "CSS"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "Desktop Development"
-    },
-    {
-      id: 6,
-      title: "Interactive Web Game",
-      description: "Browser-based game with animations and interactive features built with vanilla JavaScript.",
-      technologies: ["JavaScript", "HTML", "CSS"],
-      image: "/api/placeholder/400/300",
-      github: "#",
-      live: "#",
-      category: "Web Development"
-    }
-  ];
+  {
+    id: 1,
+    title: "Compressing using Huffman",
+    description: "A React-based application that demonstrates Huffman encoding for data compression.",
+    technologies: ["React", "JavaScript", "CSS"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Web Development"
+  },
+  {
+    id: 2,
+    title: "Dynamic Programming Project",
+    description: "A React project showcasing dynamic programming techniques and algorithms.",
+    technologies: ["React", "JavaScript", "CSS"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Web Development"
+  },
+  {
+    id: 3,
+    title: "Portfolio Homepage",
+    description: "A personal portfolio homepage designed with HTML and SCSS, showcasing professional design skills.",
+    technologies: ["HTML", "SCSS"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "UI/UX Design"
+  },
+  {
+    id: 4,
+    title: "Business Landing Page",
+    description: "A responsive landing page for a business, created using HTML and CSS.",
+    technologies: ["HTML", "CSS"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Web Development"
+  },
+  {
+    id: 5,
+    title: "Store Simple Website",
+    description: "A simple store website built with HTML, CSS, and JavaScript for basic e-commerce functionality.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Web Development"
+  },
+  {
+    id: 6,
+    title: "Dental Clinic Management System",
+    description: "A Java desktop application with JavaFX and MySQL for managing dental clinic operations.",
+    technologies: ["Java", "JavaFX", "MySQL"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Desktop Development"
+  },
+  {
+    id: 7,
+    title: "Movies Management System",
+    description: "A Java desktop application using JavaFX for managing movie databases.",
+    technologies: ["Java", "JavaFX"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Desktop Development"
+  },
+  {
+    id: 8,
+    title: "Flight Management System",
+    description: "A JavaFX-based desktop application for managing flight details and bookings.",
+    technologies: ["Java", "JavaFX"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Desktop Development"
+  },
+  {
+    id: 9,
+    title: "Python Projects",
+    description: "A collection of small Python projects developed during a Udacity Nanodegree program.",
+    technologies: ["Python"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Programming"
+  },
+  {
+    id: 10,
+    title: "DataStructure College",
+    description: "A compilation of data structure projects and assignments completed for college.",
+    technologies: ["Java", "C++"],
+    image: "/api/placeholder/400/300",
+    github: "#",
+    live: "#",
+    category: "Programming"
+  }
+];
+
 
   const categories = ["All", "Web Development", "Desktop Development", "UI/UX Design"];
   const [activeCategory, setActiveCategory] = useState("All");
