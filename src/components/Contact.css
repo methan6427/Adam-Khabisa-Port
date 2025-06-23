@@ -1,7 +1,6 @@
 
 .contact {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0a0a 100%);
   color: white;
 }
 
@@ -25,7 +24,7 @@
 .contact-info h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #feca57;
+  color: #00d4ff;
 }
 
 .contact-info p {
@@ -40,28 +39,29 @@
 
 .contact-item {
   display: block;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
 .contact-item:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 212, 255, 0.2);
   transform: translateX(5px);
+  border-color: #00d4ff;
 }
 
 .contact-item h4 {
-  color: #feca57;
+  color: #00d4ff;
   margin-bottom: 0.5rem;
 }
 
 .social-links h4 {
-  color: #feca57;
+  color: #00d4ff;
   margin-bottom: 1rem;
 }
 
@@ -72,32 +72,34 @@
 }
 
 .social-link {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   padding: 0.8rem;
   border-radius: 8px;
   text-align: center;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 212, 255, 0.2);
   transform: translateY(-2px);
+  color: #00d4ff;
+  border-color: #00d4ff;
 }
 
 .contact-form-wrapper {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   padding: 2rem;
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
 .contact-form-wrapper h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #feca57;
+  color: #00d4ff;
 }
 
 .contact-form {
@@ -119,16 +121,16 @@
 
 .form-group label {
   margin-bottom: 0.5rem;
-  color: #feca57;
+  color: #00d4ff;
   font-weight: 500;
 }
 
 .form-group input,
 .form-group textarea {
   padding: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.3);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -142,8 +144,9 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #667eea;
-  background: rgba(255, 255, 255, 0.2);
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
 }
 
 .form-group textarea {
@@ -160,7 +163,7 @@
 .footer {
   text-align: center;
   padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(0, 212, 255, 0.2);
   opacity: 0.7;
 }
 

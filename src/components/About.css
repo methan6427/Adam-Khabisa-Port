@@ -1,7 +1,6 @@
 
 .about {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0a0a0a 100%);
   color: white;
 }
 
@@ -28,7 +27,7 @@
 .about-text h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #feca57;
+  color: #00d4ff;
 }
 
 .about-text p {
@@ -38,22 +37,22 @@
 }
 
 .learning-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   padding: 1.5rem;
   border-radius: 10px;
-  border-left: 4px solid #feca57;
+  border-left: 4px solid #00d4ff;
   margin-top: 2rem;
 }
 
 .learning-box h4 {
-  color: #feca57;
+  color: #00d4ff;
   margin-bottom: 0.5rem;
 }
 
 .skills-section h3 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #feca57;
+  color: #00d4ff;
 }
 
 .skills-grid {
@@ -63,17 +62,18 @@
 }
 
 .skill-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 212, 255, 0.1);
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 212, 255, 0.2);
 }
 
 .skill-item:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 212, 255, 0.2);
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
 }
 
 @media (max-width: 768px) {

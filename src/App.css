@@ -2,6 +2,7 @@
 /* Global App Styles */
 .App {
   min-height: 100vh;
+  background: #0a0a0a;
 }
 
 /* Global section styles */
@@ -14,7 +15,7 @@ section {
 
 /* Global button styles */
 .btn {
-  background: linear-gradient(45deg, #667eea, #764ba2);
+  background: linear-gradient(45deg, #00d4ff, #0891b2);
   color: white;
   padding: 0.8rem 2rem;
   border: none;
@@ -29,18 +30,18 @@ section {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
 }
 
 .btn-outline:hover {
-  background: white;
-  color: #667eea;
+  background: #00d4ff;
+  color: #0a0a0a;
 }
 
 /* Animation classes */
