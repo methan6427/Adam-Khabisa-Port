@@ -1,8 +1,9 @@
 
 .projects {
-  background: linear-gradient(135deg, #0a0a0a 0%, #0f0f23 50%, #1a1a2e 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #0f172a 50%, #1e293b 100%);
   color: white;
   position: relative;
+  padding: 8rem 0;
 }
 
 .section-header {
@@ -11,20 +12,60 @@
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #00ffff 0%, #0891b2 100%);
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #00ffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
   font-family: 'Inter', sans-serif;
 }
 
 .section-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.7);
   font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 50px;
+  background: rgba(0, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  backdrop-filter: blur(20px);
+}
+
+.filter-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  border-color: rgba(0, 255, 255, 0.5);
+  color: #00ffff;
+  transform: translateY(-2px);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, #00ffff 0%, #0891b2 100%);
+  color: #0a0a0a;
+  border-color: #00ffff;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
 }
 
 .projects-grid {
@@ -66,7 +107,7 @@
 }
 
 .project-image {
-  height: 250px;
+  height: 220px;
   overflow: hidden;
   position: relative;
 }
@@ -79,7 +120,7 @@
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .project-category {
@@ -95,6 +136,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  backdrop-filter: blur(10px);
 }
 
 .project-content {
@@ -198,6 +240,10 @@
 }
 
 @media (max-width: 768px) {
+  .projects {
+    padding: 4rem 0;
+  }
+
   .section-title {
     font-size: 2.5rem;
   }
@@ -214,6 +260,10 @@
   .modern-btn {
     flex: none;
     width: 100%;
+  }
+
+  .filter-buttons {
+    margin-bottom: 3rem;
   }
 }
 

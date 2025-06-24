@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
@@ -20,7 +21,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Simple form handling - in a real app you'd send to a server
     alert('Thank you for your message! I\'ll get back to you soon.');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -29,29 +29,32 @@ const Contact = () => {
     {
       title: "Email",
       value: "adamkh0698@gmail.com",
-      href: "mailto:adamkh0698@gmail.com"
+      href: "mailto:adamkh0698@gmail.com",
+      icon: Mail
     },
     {
       title: "Phone",
       value: "+970593639342",
-      href: "tel:+970593639342"
+      href: "tel:+970593639342",
+      icon: Phone
+    },
+    {
+      title: "Location",
+      value: "Available for Remote Work",
+      href: "#",
+      icon: MapPin
     }
-  ];
-
-  const socialLinks = [
-    { name: "GitHub", href: "https://github.com/methan6427" },
-    { name: "LinkedIn", href: "https://www.linkedin.com/in/adam-khabisa-4a9677279/" },
-    { name: "Facebook", href: "https://www.facebook.com/adam.khabisa.64" },
-    { name: "Instagram", href: "https://www.instagram.com/methan6427/" }
   ];
 
   return (
     <section id="contact" className="contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
-        <p className="section-subtitle">
-          I'm always open to discussing new opportunities, projects, or just having a chat about technology
-        </p>
+        <div className="section-header">
+          <h2 className="section-title">Get In Touch</h2>
+          <p className="section-subtitle">
+            I'm always open to discussing new opportunities, projects, or just having a chat about technology
+          </p>
+        </div>
         
         <div className="contact-content">
           <div className="contact-info">
@@ -62,23 +65,20 @@ const Contact = () => {
             </p>
             
             <div className="contact-details">
-              {contactInfo.map((info, index) => (
-                <a key={index} href={info.href} className="contact-item">
-                  <h4>{info.title}</h4>
-                  <p>{info.value}</p>
-                </a>
-              ))}
-            </div>
-            
-            <div className="social-links">
-              <h4>Follow Me</h4>
-              <div className="social-grid">
-                {socialLinks.map((social, index) => (
-                  <a key={index} href={social.href} className="social-link" target="_blank" rel="noopener noreferrer">
-                    {social.name}
+              {contactInfo.map((info, index) => {
+                const IconComponent = info.icon;
+                return (
+                  <a key={index} href={info.href} className="contact-item">
+                    <div className="contact-icon">
+                      <IconComponent size={20} />
+                    </div>
+                    <div className="contact-text">
+                      <h4>{info.title}</h4>
+                      <p>{info.value}</p>
+                    </div>
                   </a>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </div>
           
@@ -138,8 +138,9 @@ const Contact = () => {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn submit-btn">
-                Send Message
+              <button type="submit" className="submit-btn">
+                <Send size={18} />
+                <span>Send Message</span>
               </button>
             </form>
           </div>

@@ -1,21 +1,25 @@
 
 import React from 'react';
+import { Code2, Palette, Database, Monitor, Globe, Smartphone } from 'lucide-react';
 import './About.css';
 
 const About = () => {
   const skills = [
-    'React.js',
-    'JavaScript',
-    'Java',
-    'JavaFX',
-    'HTML',
-    'CSS'
+    { name: 'React.js', icon: Code2 },
+    { name: 'JavaScript', icon: Code2 },
+    { name: 'Java', icon: Code2 },
+    { name: 'JavaFX', icon: Monitor },
+    { name: 'HTML', icon: Globe },
+    { name: 'CSS', icon: Palette }
   ];
 
   return (
     <section id="about" className="about">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <div className="section-header">
+          <h2 className="section-title">About Me</h2>
+          <p className="section-subtitle">Passionate about creating engaging digital experiences through code</p>
+        </div>
         
         <div className="about-content">
           <div className="about-text">
@@ -43,11 +47,15 @@ const About = () => {
           <div className="skills-section">
             <h3>Technical Skills</h3>
             <div className="skills-grid">
-              {skills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  {skill}
-                </div>
-              ))}
+              {skills.map((skill, index) => {
+                const IconComponent = skill.icon;
+                return (
+                  <div key={index} className="skill-item">
+                    <IconComponent size={20} />
+                    <span>{skill.name}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

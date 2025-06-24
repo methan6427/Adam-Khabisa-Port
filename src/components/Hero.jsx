@@ -25,15 +25,14 @@ const Hero = () => {
         </h1>
         
         <p className="hero-subtitle fade-in-up">
-          4th-year Computer Science student specializing in frontend development 
-          with React and modern web technologies
+          4th-year Computer Science student specializing in <span className="highlight-text">frontend development</span> with React and modern web technologies
         </p>
         
         <div className="hero-buttons fade-in-up">
-          <button onClick={() => scrollToSection('projects')} className="btn">
-            View Projects
+          <button onClick={() => scrollToSection('projects')} className="btn primary">
+            View Portfolio
           </button>
-          <button onClick={() => scrollToSection('contact')} className="btn btn-outline">
+          <button onClick={() => scrollToSection('contact')} className="btn secondary">
             Contact Me
           </button>
         </div>

@@ -1,52 +1,73 @@
 
-import React from 'react';
-import { Github, ExternalLink, Code2, Palette, Database } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, ExternalLink, Code2, Palette, Database, Monitor } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
+  const [activeFilter, setActiveFilter] = useState('All');
+
   const projects = [
     {
-      title: "E-Commerce Website",
-      description: "A full-featured online store built with React.js featuring product catalog, shopping cart, and user authentication.",
-      technologies: ["React", "JavaScript", "CSS"],
-      image: "https://via.placeholder.com/400x250/667eea/ffffff?text=E-Commerce+Project",
-      category: "Frontend"
+      title: "E-Commerce Platform",
+      description: "Modern React-based e-commerce platform with cart functionality, user authentication, and payment integration.",
+      technologies: ["React", "JavaScript", "CSS", "HTML"],
+      image: "https://via.placeholder.com/400x250/1e293b/00ffff?text=E-Commerce",
+      category: "Web Development"
     },
     {
       title: "Task Management App",
-      description: "A productivity application for managing daily tasks and projects with drag-and-drop functionality.",
-      technologies: ["React", "JavaScript", "Local Storage"],
-      image: "https://via.placeholder.com/400x250/764ba2/ffffff?text=Task+Manager",
-      category: "Full Stack"
+      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team features.",
+      technologies: ["React", "CSS", "JavaScript", "HTML"],
+      image: "https://via.placeholder.com/400x250/1e293b/00ffff?text=Task+Manager",
+      category: "Web Development"
     },
     {
-      title: "Weather Dashboard",
-      description: "A responsive weather application that displays current conditions and forecasts for multiple cities.",
-      technologies: ["React", "API Integration", "CSS"],
-      image: "https://via.placeholder.com/400x250/ff6b6b/ffffff?text=Weather+App",
-      category: "Frontend"
+      title: "Portfolio Website",
+      description: "Personal portfolio website showcasing projects and skills with smooth animations and responsive design.",
+      technologies: ["React", "CSS", "JavaScript", "HTML"],
+      image: "https://via.placeholder.com/400x250/1e293b/00ffff?text=Portfolio",
+      category: "UI/UX Design"
     }
   ];
 
+  const filters = ['All', 'Web Development', 'Desktop Development', 'UI/UX Design'];
+
   const getCategoryIcon = (category) => {
     switch (category) {
-      case 'Frontend': return Palette;
-      case 'Full Stack': return Code2;
-      case 'Backend': return Database;
+      case 'Web Development': return Code2;
+      case 'UI/UX Design': return Palette;
+      case 'Desktop Development': return Monitor;
       default: return Code2;
     }
   };
+
+  const filteredProjects = activeFilter === 'All' 
+    ? projects 
+    : projects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">Showcasing my latest work and creative solutions</p>
+          <p className="section-subtitle">Here are some of my recent projects that showcase my skills and passion for development</p>
+        </div>
+
+        <div className="filter-buttons">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+              onClick={() => setActiveFilter(filter)}
+            >
+              <Code2 size={16} />
+              <span>{filter}</span>
+            </button>
+          ))}
         </div>
         
         <div className="projects-grid">
-          {projects.map((project, index) => {
+          {filteredProjects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.category);
             return (
               <div key={index} className="project-card">
