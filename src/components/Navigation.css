@@ -40,7 +40,7 @@
 
 .nav-menu {
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -51,7 +51,7 @@
   font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   position: relative;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
