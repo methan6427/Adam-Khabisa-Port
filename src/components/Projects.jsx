@@ -11,7 +11,7 @@ const Projects = () => {
       title: "Compressing using Huffman",
       description: "A React-based application that demonstrates Huffman encoding for data compression.",
       technologies: ["React", "JavaScript", "CSS"],
-      image: "/public/prjPics/huffman.png",  // Updated path
+      image: "/prjPics/huffman.png",  // Updated path
       github: "https://github.com/methan6427/Compressing-using-Huffman",
       live: "https://methan6427.github.io/Compressing-using-Huffman/",
       category: "Web Development"
@@ -21,7 +21,7 @@ const Projects = () => {
       title: "Dynamic Programming Project",
       description: "A React project showcasing dynamic programming techniques and algorithms.",
       technologies: ["React", "JavaScript", "CSS"],
-      image: "/public/prjPics/dynamic.png",  // Updated path
+      image: "/prjPics/dynamic.png",  // Updated path
       github: "https://github.com/methan6427/Dynamic-Programming",
       live: "https://methan6427.github.io/Dynamic-Programming/",
       category: "Web Development"
@@ -31,7 +31,7 @@ const Projects = () => {
       title: "Portfolio Homepage",
       description: "A personal portfolio homepage designed with HTML and SCSS, showcasing professional design skills.",
       technologies: ["HTML", "SCSS"],
-      image: "/public/prjPics/porfolio.png",
+      image: "/prjPics/porfolio.png",
       github: "https://github.com/methan6427/portfolio-homepage",
       live: "https://methan6427.github.io/portfolio-homepage/",
       category: "UI/UX Design"
@@ -41,7 +41,7 @@ const Projects = () => {
       title: "Business Landing Page",
       description: "A responsive landing page for a business, created using HTML and CSS.",
       technologies: ["HTML", "CSS"],
-      image: "/public/prjPics/bussiness landing.png",
+      image: "/prjPics/business-landing.png",
       github: "https://github.com/methan6427/bussiness-landing",
       live: "https://methan6427.github.io/bussiness-landing/",
       category: "Web Development"
@@ -51,7 +51,7 @@ const Projects = () => {
       title: "Store Simple Website",
       description: "A simple store website built with HTML, CSS, and JavaScript for basic e-commerce functionality.",
       technologies: ["HTML", "CSS", "JavaScript"],
-      image: "/public/prjPics/simpleStore.png",
+      image: "/prjPics/simple-store.png",
       github: "https://github.com/methan6427/Store-Simple-Website",
       live: "https://methan6427.github.io/Store-Simple-Website/",
       category: "Web Development"
@@ -61,7 +61,7 @@ const Projects = () => {
       title: "Dental Clinic Management System",
       description: "A Java desktop application with JavaFX and MySQL for managing dental clinic operations.",
       technologies: ["Java", "JavaFX", "MySQL"],
-      image: "/public/prjPics/dental.png",
+      image: "/prjPics/dental.png",
       github: "#",
       live: "#",
       category: "Desktop Development"
@@ -71,7 +71,7 @@ const Projects = () => {
       title: "Movies Management System",
       description: "A Java desktop application using JavaFX for managing movie databases.",
       technologies: ["Java", "JavaFX"],
-      image: "/public/prjPics/movie.png",
+      image: "/prjPics/movie.png",
       github: "https://github.com/methan6427/Movies-Managment-System",
       live: "https://github.com/methan6427/Movies-Managment-System",
       category: "Desktop Development"
@@ -81,7 +81,7 @@ const Projects = () => {
       title: "Flight Management System",
       description: "A JavaFX-based desktop application for managing flight details and bookings.",
       technologies: ["Java", "JavaFX"],
-      image: "/public/prjPics/flight.jpg",
+      image: "/prjPics/flight.jpg",
       github: "https://github.com/methan6427/Flight-management-system",
       live: "https://github.com/methan6427/Flight-management-system",
       category: "Desktop Development"
@@ -91,7 +91,7 @@ const Projects = () => {
       title: "Python Projects",
       description: "A collection of small Python projects developed during a Udacity Nanodegree program.",
       technologies: ["Python"],
-      image: "/public/prjPics/python.jpg",
+      image: "/prjPics/python.jpg",
       github: "https://github.com/methan6427/Python-projects",
       live: "https://github.com/methan6427/Python-projects",
       category: "Programming"
@@ -101,7 +101,7 @@ const Projects = () => {
       title: "DataStructure College",
       description: "A compilation of data structure projects and assignments completed for college.",
       technologies: ["Java", "JavaFX"],
-      image: "/public/prjPics/dsa.png",
+      image: "/prjPics/dsa.png",
       github: "https://github.com/methan6427/DataStructure-College",
       live: "https://github.com/methan6427/DataStructure-College",
       category: "Programming"
@@ -111,7 +111,7 @@ const Projects = () => {
       title: "Dijkstra-USA-React",
       description: "Find the shortest path between 2 vertices in USA using Dijkstra's algorithm.",
       technologies: ["React", "JavaScript", "CSS"],
-      image: "/public/prjPics/Dijkstra.png",
+      image: "/prjPics/Dijkstra.png",
       github: "https://github.com/methan6427/Dijkstra-USA-React",
       live: "https://methan6427.github.io/Dijkstra-USA-React/",
       category: "Web Development"
