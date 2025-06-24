@@ -22,11 +22,29 @@ const Navigation = () => {
     }
   };
 
+  const socialLinks = [
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/adam-khabisa-4a9677279/', icon: '💼' },
+    { name: 'GitHub', href: 'https://github.com/methan6427', icon: '💻' },
+    { name: 'Facebook', href: 'https://www.facebook.com/adam.khabisa.64', icon: '📘' },
+    { name: 'Instagram', href: 'https://www.instagram.com/methan6427/', icon: '📷' }
+  ];
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="nav-logo">
-          <h2>Adam Khabisa</h2>
+        <div className="social-icons">
+          {socialLinks.map((social, index) => (
+            <a 
+              key={index} 
+              href={social.href} 
+              className="social-icon" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              title={social.name}
+            >
+              {social.icon}
+            </a>
+          ))}
         </div>
         
         <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
@@ -34,6 +52,10 @@ const Navigation = () => {
           <button onClick={() => scrollToSection('about')} className="nav-link">About</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
           <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
+        </div>
+
+        <div className="nav-logo">
+          <h2>Adam Khabisa</h2>
         </div>
 
         <div className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>

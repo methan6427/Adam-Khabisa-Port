@@ -3,6 +3,28 @@
 .App {
   min-height: 100vh;
   background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.bg-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00ffff;
+  border-radius: 50%;
 }
 
 /* Global section styles */
@@ -11,12 +33,13 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 /* Global button styles */
 .btn {
-  background: linear-gradient(45deg, #00d4ff, #0891b2);
-  color: white;
+  background: linear-gradient(45deg, #00ffff, #0891b2);
+  color: #0a0a0a;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 25px;
@@ -25,23 +48,39 @@ section {
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 255, 255, 0.4);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid #00d4ff;
-  color: #00d4ff;
+  border: 2px solid #00ffff;
+  color: #00ffff;
 }
 
 .btn-outline:hover {
-  background: #00d4ff;
+  background: #00ffff;
   color: #0a0a0a;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+p, span, div {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+code, pre {
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* Animation classes */
