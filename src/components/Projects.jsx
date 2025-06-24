@@ -31,7 +31,7 @@ const Projects = () => {
       title: "Portfolio Homepage",
       description: "A personal portfolio homepage designed with HTML and SCSS, showcasing professional design skills.",
       technologies: ["HTML", "SCSS"],
-      image: "/prjPics/porfolio.png",
+      image: "/prjPics/portfolio.png",
       github: "https://github.com/methan6427/portfolio-homepage",
       live: "https://methan6427.github.io/portfolio-homepage/",
       category: "UI/UX Design"
