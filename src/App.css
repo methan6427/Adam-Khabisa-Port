@@ -123,3 +123,24 @@ code, pre {
     font-size: 0.9rem;
   }
 }
+/* Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure full width and no overflow */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #0a0a0a; /* Match your dark background */
+}
+
+/* Make sure your App container fills the viewport */
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background: #0a0a0a;
+  font-family: 'Inter', sans-serif;
+}
