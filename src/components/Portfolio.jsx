@@ -1,115 +1,123 @@
-
 import React, { useState } from 'react';
-import { Github, ExternalLink, Code, Palette, Smartphone } from 'lucide-react';
+import { Github, ExternalLink, Code, Palette, Smartphone, Database } from 'lucide-react';
 
 const Portfolio = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projects = [
-  {
-    id: 1,
-    title: "Compressing using Huffman",
-    description: "A React-based application that demonstrates Huffman encoding for data compression.",
-    technologies: ["React", "JavaScript", "CSS"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Web Development"
-  },
-  {
-    id: 2,
-    title: "Dynamic Programming Project",
-    description: "A React project showcasing dynamic programming techniques and algorithms.",
-    technologies: ["React", "JavaScript", "CSS"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Web Development"
-  },
-  {
-    id: 3,
-    title: "Portfolio Homepage",
-    description: "A personal portfolio homepage designed with HTML and SCSS, showcasing professional design skills.",
-    technologies: ["HTML", "SCSS"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "UI/UX Design"
-  },
-  {
-    id: 4,
-    title: "Business Landing Page",
-    description: "A responsive landing page for a business, created using HTML and CSS.",
-    technologies: ["HTML", "CSS"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Web Development"
-  },
-  {
-    id: 5,
-    title: "Store Simple Website",
-    description: "A simple store website built with HTML, CSS, and JavaScript for basic e-commerce functionality.",
-    technologies: ["HTML", "CSS", "JavaScript"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Web Development"
-  },
-  {
-    id: 6,
-    title: "Dental Clinic Management System",
-    description: "A Java desktop application with JavaFX and MySQL for managing dental clinic operations.",
-    technologies: ["Java", "JavaFX", "MySQL"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Desktop Development"
-  },
-  {
-    id: 7,
-    title: "Movies Management System",
-    description: "A Java desktop application using JavaFX for managing movie databases.",
-    technologies: ["Java", "JavaFX"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Desktop Development"
-  },
-  {
-    id: 8,
-    title: "Flight Management System",
-    description: "A JavaFX-based desktop application for managing flight details and bookings.",
-    technologies: ["Java", "JavaFX"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Desktop Development"
-  },
-  {
-    id: 9,
-    title: "Python Projects",
-    description: "A collection of small Python projects developed during a Udacity Nanodegree program.",
-    technologies: ["Python"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Programming"
-  },
-  {
-    id: 10,
-    title: "DataStructure College",
-    description: "A compilation of data structure projects and assignments completed for college.",
-    technologies: ["Java", "C++"],
-    image: "/api/placeholder/400/300",
-    github: "#",
-    live: "#",
-    category: "Programming"
-  }
-];
+    {
+      id: 1,
+      title: "Compressing using Huffman",
+      description: "A React-based application that demonstrates Huffman encoding for data compression.",
+      technologies: ["React", "JavaScript", "CSS"],
+      image: "https://drive.google.com/file/d/1Wo78WTJCHOakCF2I6jfUjoVuFO0nmXjm/view?usp=drive_link",
+      github: "https://github.com/methan6427/Compressing-using-Huffman",
+      live: "https://methan6427.github.io/Compressing-using-Huffman/",
+      category: "Web Development"
+    },
+    {
+      id: 2,
+      title: "Dynamic Programming Project",
+      description: "A React project showcasing dynamic programming techniques and algorithms.",
+      technologies: ["React", "JavaScript", "CSS"],
+      image: "https://drive.google.com/file/d/1EcOkiPOOC1Q6Iz9BFHQGNoELW5zkQYh_/view?usp=drive_link",
+      github: "https://github.com/methan6427/Dynamic-Programming",
+      live: "https://methan6427.github.io/Dynamic-Programming/",
+      category: "Web Development"
+    },
+    {
+      id: 3,
+      title: "Portfolio Homepage",
+      description: "A personal portfolio homepage designed with HTML and SCSS, showcasing professional design skills.",
+      technologies: ["HTML", "SCSS"],
+      image: "https://drive.google.com/file/d/1Z3fDA4wjIstWAdQWluT-ufoP3YESMkgy/view?usp=drive_link",
+      github: "https://github.com/methan6427/portfolio-homepage",
+      live: "https://methan6427.github.io/portfolio-homepage/",
+      category: "UI/UX Design"
+    },
+    {
+      id: 4,
+      title: "Business Landing Page",
+      description: "A responsive landing page for a business, created using HTML and CSS.",
+      technologies: ["HTML", "CSS"],
+      image: "https://drive.google.com/file/d/17N1l4ASgYqnQ40Qj9q9DTjyhVNSgk9TD/view?usp=drive_link",
+      github: "https://github.com/methan6427/bussiness-landing",
+      live: "https://methan6427.github.io/bussiness-landing/",
+      category: "Web Development"
+    },
+    {
+      id: 5,
+      title: "Store Simple Website",
+      description: "A simple store website built with HTML, CSS, and JavaScript for basic e-commerce functionality.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      image: "https://drive.google.com/file/d/1DydFfczUIfsN5deslv1HRpWxf2l8Jl4n/view?usp=drive_link",
+      github: "https://github.com/methan6427/Store-Simple-Website",
+      live: "https://methan6427.github.io/Store-Simple-Website/",
+      category: "Web Development"
+    },
+    {
+      id: 6,
+      title: "Dental Clinic Management System",
+      description: "A Java desktop application with JavaFX and MySQL for managing dental clinic operations.",
+      technologies: ["Java", "JavaFX", "MySQL"],
+      image: "https://drive.google.com/file/d/1_UJ-ykKtL53g4HbcgqB9F2B5-Q0GoO8n/view?usp=drive_link",
+      github: "#",
+      live: "#",
+      category: "Desktop Development"
+    },
+    {
+      id: 7,
+      title: "Movies Management System",
+      description: "A Java desktop application using JavaFX for managing movie databases.",
+      technologies: ["Java", "JavaFX"],
+      image: "https://drive.google.com/file/d/1rd7D8ZKUqUgNbo076ImiQFQKnD7Eek48/view?usp=drive_link",
+      github: "https://github.com/methan6427/Movies-Managment-System",
+      live: "https://github.com/methan6427/Movies-Managment-System",
+      category: "Desktop Development"
+    },
+    {
+      id: 8,
+      title: "Flight Management System",
+      description: "A JavaFX-based desktop application for managing flight details and bookings.",
+      technologies: ["Java", "JavaFX"],
+      image: "https://drive.google.com/file/d/1XBRQQl45Mninmq3hupPjgyx3ho7d3OaN/view?usp=drive_link",
+      github: "https://github.com/methan6427/Flight-management-system",
+      live: "https://github.com/methan6427/Flight-management-system",
+      category: "Desktop Development"
+    },
+    {
+      id: 9,
+      title: "Python Projects",
+      description: "A collection of small Python projects developed during a Udacity Nanodegree program.",
+      technologies: ["Python"],
+      image: "https://drive.google.com/file/d/1QLDxzs8jNAe94nwnpKlsX9OO1G3tpVWL/view?usp=drive_link",
+      github: "https://github.com/methan6427/Python-projects",
+      live: "https://github.com/methan6427/Python-projects",
+      category: "Programming"
+    },
+    {
+      id: 10,
+      title: "DataStructure College",
+      description: "A compilation of data structure projects and assignments completed for college.",
+      technologies: ["Java", "C++"],
+      image: "https://drive.google.com/file/d/1vbOq5f3XAavF2piaCYuLE-EPlCEMSSrT/view?usp=drive_link",
+      github: "https://github.com/methan6427/DataStructure-College",
+      live: "https://github.com/methan6427/DataStructure-College",
+      category: "Programming"
+    },
+    {
+      id: 11,
+      title: "Dijkstra-USA-React",
+      description: "Find the shortest path between 2 vertices in USA using Dijkstra's algorithm.",
+      technologies: ["React", "JavaScript", "CSS"],
+      image: "https://drive.google.com/file/d/19OegN_oKtWz-6LDlNi3H2ARgaDTnpmHq/view?usp=drive_link",
+      github: "https://github.com/methan6427/Dijkstra-USA-React",
+      live: "https://methan6427.github.io/Dijkstra-USA-React/",
+      category: "Web Development"
+    }
+  ];
 
-
-  const categories = ["All", "Web Development", "Desktop Development", "UI/UX Design"];
+  const categories = ["All", "Web Development", "Desktop Development", "UI/UX Design", "Programming"];
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = activeCategory === "All" 
@@ -121,6 +129,7 @@ const Portfolio = () => {
       case "Web Development": return Code;
       case "Desktop Development": return Smartphone;
       case "UI/UX Design": return Palette;
+      case "Programming": return Database;
       default: return Code;
     }
   };
@@ -178,6 +187,8 @@ const Portfolio = () => {
                   <div className="absolute inset-0 bg-cyan-500/20 flex items-center justify-center space-x-4">
                     <a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-3 bg-slate-900/80 rounded-full text-slate-50 hover:bg-cyan-500 transition-colors duration-200"
                       aria-label="View on GitHub"
                     >
@@ -185,6 +196,8 @@ const Portfolio = () => {
                     </a>
                     <a
                       href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-3 bg-slate-900/80 rounded-full text-slate-50 hover:bg-cyan-500 transition-colors duration-200"
                       aria-label="View Live Demo"
                     >
@@ -226,6 +239,8 @@ const Portfolio = () => {
                 <div className="flex space-x-3">
                   <a
                     href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-slate-700 text-slate-50 rounded-lg hover:bg-slate-600 transition-colors duration-200 text-sm"
                   >
                     <Github size={16} />
@@ -233,6 +248,8 @@ const Portfolio = () => {
                   </a>
                   <a
                     href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center space-x-2 px-4 py-2 bg-cyan-500 text-slate-50 rounded-lg hover:bg-cyan-600 transition-colors duration-200 text-sm"
                   >
                     <ExternalLink size={16} />
