@@ -111,7 +111,7 @@ const Projects = () => {
       title: "Dijkstra-USA-React",
       description: "Find the shortest path between 2 vertices in USA using Dijkstra's algorithm.",
       technologies: ["React", "JavaScript", "CSS"],
-      image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/Dijkstra.png?raw=true",
+      image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/dijkstra.png?raw=true",
       github: "https://github.com/methan6427/Dijkstra-USA-React",
       live: "https://methan6427.github.io/Dijkstra-USA-React/",
       category: "Web Development"
