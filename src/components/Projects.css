@@ -133,25 +133,27 @@
   box-shadow: 0 8px 25px rgba(0, 255, 255, 0.4);
 }
 
-/* text opacity states */
-.toggle-switch > span:last-of-type,
-.toggle-switch > input:checked + span:first-of-type {
-  opacity: 0.6;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.toggle-switch > input:checked ~ span:last-of-type {
-  opacity: 1;
-  color: #0a0a0a;
-}
-
+/* text opacity and color states */
+/* Default state - "My Projects" is active (unchecked) */
 .toggle-switch > span:first-of-type {
   opacity: 1;
   color: #0a0a0a;
 }
 
-.toggle-switch:has(input:checked) > span:first-of-type {
+.toggle-switch > span:last-of-type {
+  opacity: 0.6;
   color: rgba(255, 255, 255, 0.6);
+}
+
+/* Checked state - "Certificates & Achievements" is active */
+.toggle-switch:has(input:checked) > span:first-of-type {
+  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.toggle-switch:has(input:checked) > span:last-of-type {
+  opacity: 1;
+  color: #0a0a0a;
 }
 
 .filter-buttons {
