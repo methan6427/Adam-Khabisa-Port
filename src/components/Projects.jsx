@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Code2, Palette, Database, Monitor } from 'lucide-react';
+import { Github, ExternalLink, Code2, Palette, Database, Monitor, Award, Calendar } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [activeSection, setActiveSection] = useState('projects'); // New state for section toggle
 
   const projects = [
     {
@@ -118,6 +119,29 @@ const Projects = () => {
     }
   ];
 
+  const certificates = [
+    {
+      id: 1,
+      title: "Front End Web Developer Nanodegree (FEND)",
+      description: "Specialized program focused on building interactive web applications using modern web technologies.",
+      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "CSS Grid", "Flexbox"],
+      completedDate: "May 24, 2025",
+      issuer: "Udacity",
+      details: "Construct responsive websites using CSS, Flexbox, and CSS Grid. Develop interactive websites and UI applications using JavaScript and HTML. Connect web applications to backend server data using JavaScript.",
+      certificateLink: "#"
+    },
+    {
+      id: 2,
+      title: "Intro to Programming Nanodegree (IPND)",
+      description: "Comprehensive introduction to programming fundamentals serving as the first step in the programming journey.",
+      skills: ["HTML", "CSS", "JavaScript", "Python", "Unix Shell", "Git"],
+      completedDate: "February 13, 2025",
+      issuer: "Udacity",
+      details: "Built websites using HTML and CSS, created Python-based games and applications, developed a Mad Libs-style game using Python functions, and completed an interactive resume webpage as the final project.",
+      certificateLink: "#"
+    }
+  ];
+
   const filters = ['All', 'Web Development', 'Desktop Development', 'UI/UX Design', 'Programming'];
 
   const getCategoryIcon = (category) => {
@@ -138,63 +162,125 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">My Projects</h2>
-          <p className="section-subtitle">Here are some of my recent projects that showcase my skills and passion for development</p>
+          <h2 className="section-title">My Work & Achievements</h2>
+          <p className="section-subtitle">Explore my projects and professional certifications that showcase my development journey</p>
         </div>
 
-        <div className="filter-buttons">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter)}
-            >
-              <Code2 size={16} />
-              <span>{filter}</span>
-            </button>
-          ))}
+        {/* Section Toggle Buttons */}
+        <div className="section-toggle">
+          <button
+            className={`toggle-btn ${activeSection === 'projects' ? 'active' : ''}`}
+            onClick={() => setActiveSection('projects')}
+          >
+            <Code2 size={16} />
+            <span>My Projects</span>
+          </button>
+          <button
+            className={`toggle-btn ${activeSection === 'certificates' ? 'active' : ''}`}
+            onClick={() => setActiveSection('certificates')}
+          >
+            <Award size={16} />
+            <span>Certificates & Achievements</span>
+          </button>
         </div>
-        
-        <div className="projects-grid">
-          {filteredProjects.map((project, index) => {
-            const CategoryIcon = getCategoryIcon(project.category);
-            return (
-              <div key={index} className="project-card">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                  <div className="project-category">
-                    <CategoryIcon size={16} />
-                    <span>{project.category}</span>
+
+        {activeSection === 'projects' && (
+          <>
+            <div className="filter-buttons">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                  onClick={() => setActiveFilter(filter)}
+                >
+                  <Code2 size={16} />
+                  <span>{filter}</span>
+                </button>
+              ))}
+            </div>
+            
+            <div className="projects-grid">
+              {filteredProjects.map((project, index) => {
+                const CategoryIcon = getCategoryIcon(project.category);
+                return (
+                  <div key={index} className="project-card">
+                    <div className="project-image">
+                      <img src={project.image} alt={project.title} />
+                      <div className="project-category">
+                        <CategoryIcon size={16} />
+                        <span>{project.category}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="project-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      
+                      <div className="project-tech">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span key={techIndex} className="tech-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <div className="project-actions">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
+                          <ExternalLink size={18} />
+                          <span>Live Demo</span>
+                        </a>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="modern-btn secondary">
+                          <Github size={18} />
+                          <span>Source Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        {activeSection === 'certificates' && (
+          <div className="projects-grid">
+            {certificates.map((certificate, index) => (
+              <div key={index} className="project-card certificate-card">
+                <div className="project-image certificate-image">
+                  <div className="certificate-icon">
+                    <Award size={48} className="award-icon" />
+                  </div>
+                  <div className="project-category certificate-category">
+                    <Calendar size={16} />
+                    <span>{certificate.completedDate}</span>
                   </div>
                 </div>
                 
                 <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <div className="certificate-issuer">{certificate.issuer}</div>
+                  <h3>{certificate.title}</h3>
+                  <p>{certificate.description}</p>
+                  <p className="certificate-details">{certificate.details}</p>
                   
                   <div className="project-tech">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-tag">
-                        {tech}
+                    {certificate.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="tech-tag">
+                        {skill}
                       </span>
                     ))}
                   </div>
                   
                   <div className="project-actions">
-                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
-                      <ExternalLink size={18} />
-                      <span>Live Demo</span>
-                    </a>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="modern-btn secondary">
-                      <Github size={18} />
-                      <span>Source Code</span>
+                    <a href={certificate.certificateLink} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
+                      <Award size={18} />
+                      <span>View Certificate</span>
                     </a>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
