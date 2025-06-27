@@ -4,7 +4,7 @@ import './Projects.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [activeSection, setActiveSection] = useState('projects'); // New state for section toggle
+  const [showCertificates, setShowCertificates] = useState(false); // Changed to boolean for checkbox
 
   const projects = [
     {
@@ -166,25 +166,20 @@ const Projects = () => {
           <p className="section-subtitle">Explore my projects and professional certifications that showcase my development journey</p>
         </div>
 
-        {/* Section Toggle Buttons */}
+        {/* Toggle Switch */}
         <div className="section-toggle">
-          <button
-            className={`toggle-btn ${activeSection === 'projects' ? 'active' : ''}`}
-            onClick={() => setActiveSection('projects')}
-          >
-            <Code2 size={16} />
+          <label className="toggle-switch" aria-label="Toggle between projects and certificates">
+            <input 
+              type="checkbox" 
+              checked={showCertificates}
+              onChange={(e) => setShowCertificates(e.target.checked)}
+            />
             <span>My Projects</span>
-          </button>
-          <button
-            className={`toggle-btn ${activeSection === 'certificates' ? 'active' : ''}`}
-            onClick={() => setActiveSection('certificates')}
-          >
-            <Award size={16} />
             <span>Certificates & Achievements</span>
-          </button>
+          </label>
         </div>
 
-        {activeSection === 'projects' && (
+        {!showCertificates && (
           <>
             <div className="filter-buttons">
               {filters.map((filter) => (
@@ -242,7 +237,7 @@ const Projects = () => {
           </>
         )}
 
-        {activeSection === 'certificates' && (
+        {showCertificates && (
           <div className="projects-grid">
             {certificates.map((certificate, index) => (
               <div key={index} className="project-card certificate-card">
