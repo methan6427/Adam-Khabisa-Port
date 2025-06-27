@@ -124,21 +124,23 @@ const Projects = () => {
       id: 1,
       title: "Front End Web Developer Nanodegree (FEND)",
       description: "Specialized program focused on building interactive web applications using modern web technologies.",
-      skills: ["HTML", "CSS", "JavaScript", "Responsive Design", "CSS Grid", "Flexbox"],
+      skills: ["HTML", "SCSS", "JavaScript", "Responsive Design", "Testing","Optimization"],
       completedDate: "May 24, 2025",
       issuer: "Udacity",
       details: "Construct responsive websites using CSS, Flexbox, and CSS Grid. Develop interactive websites and UI applications using JavaScript and HTML. Connect web applications to backend server data using JavaScript.",
-      certificateLink: "#"
+      certificateLink: "www.udacity.com/certificate/e/033178aa-edf1-11ef-9ea3-cbae88ad59d9",
+      image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/FE.png?raw=true"
     },
     {
       id: 2,
       title: "Intro to Programming Nanodegree (IPND)",
       description: "Comprehensive introduction to programming fundamentals serving as the first step in the programming journey.",
-      skills: ["HTML", "CSS", "JavaScript", "Python", "Unix Shell", "Git"],
+      skills: ["HTML", "CSS", "JavaScript", "Python", "OOP in Python"],
       completedDate: "February 13, 2025",
       issuer: "Udacity",
       details: "Built websites using HTML and CSS, created Python-based games and applications, developed a Mad Libs-style game using Python functions, and completed an interactive resume webpage as the final project.",
-      certificateLink: "#"
+      certificateLink: "www.udacity.com/certificate/e/dabdce6a-899f-11ef-9878-877c1bca966b",
+      image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/ITP.png?raw=true"
     }
   ];
 
@@ -243,20 +245,20 @@ const Projects = () => {
               <div key={index} className="project-card certificate-card">
                 <div className="project-image certificate-image">
                   <div className="certificate-icon">
-                    <Award size={48} className="award-icon" />
+                    <img src={certificate.image} alt={certificate.title}/>
                   </div>
                   <div className="project-category certificate-category">
                     <Calendar size={16} />
                     <span>{certificate.completedDate}</span>
                   </div>
                 </div>
-                
+
                 <div className="project-content">
                   <div className="certificate-issuer">{certificate.issuer}</div>
                   <h3>{certificate.title}</h3>
                   <p>{certificate.description}</p>
                   <p className="certificate-details">{certificate.details}</p>
-                  
+
                   <div className="project-tech">
                     {certificate.skills.map((skill, skillIndex) => (
                       <span key={skillIndex} className="tech-tag">
@@ -264,7 +266,7 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="project-actions">
                     <a href={certificate.certificateLink} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
                       <Award size={18} />
