@@ -4,7 +4,7 @@ import './Projects.css';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const [showCertificates, setShowCertificates] = useState(false);
+  const [showCertificates, setShowCertificates] = useState(false); // Changed to boolean for checkbox
 
   const projects = [
     {
@@ -157,143 +157,129 @@ const Projects = () => {
   };
 
   const filteredProjects = activeFilter === 'All'
-      ? projects
-      : projects.filter(project => project.category === activeFilter);
-
-  // Debug function - you can call this to check the links
-  const handleCertificateClick = (certificateLink) => {
-    console.log('Certificate Link:', certificateLink);
-    window.open(certificateLink, '_blank', 'noopener,noreferrer');
-  };
+    ? projects
+    : projects.filter(project => project.category === activeFilter);
 
   return (
-      <section id="projects" className="projects">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">My Work & Achievements</h2>
-            <p className="section-subtitle">Explore my projects and professional certifications that showcase my development journey</p>
-          </div>
+    <section id="projects" className="projects">
+      <div className="container">
+        <div className="section-header">
+          <h2 className="section-title">My Work & Achievements</h2>
+          <p className="section-subtitle">Explore my projects and professional certifications that showcase my development journey</p>
+        </div>
 
-          {/* Toggle Switch */}
-          <div className="section-toggle">
-            <label className="toggle-switch" aria-label="Toggle between projects and certificates">
-              <input
-                  type="checkbox"
-                  checked={showCertificates}
-                  onChange={(e) => setShowCertificates(e.target.checked)}
-              />
-              <span>My Projects</span>
-              <span>Certificates & Achievements</span>
-            </label>
-          </div>
+        {/* Toggle Switch */}
+        <div className="section-toggle">
+          <label className="toggle-switch" aria-label="Toggle between projects and certificates">
+            <input
+              type="checkbox"
+              checked={showCertificates}
+              onChange={(e) => setShowCertificates(e.target.checked)}
+            />
+            <span>My Projects</span>
+            <span>Certificates & Achievements</span>
+          </label>
+        </div>
 
-          {!showCertificates && (
-              <>
-                <div className="filter-buttons">
-                  {filters.map((filter) => (
-                      <button
-                          key={filter}
-                          className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-                          onClick={() => setActiveFilter(filter)}
-                      >
-                        <Code2 size={16} />
-                        <span>{filter}</span>
-                      </button>
-                  ))}
-                </div>
+        {!showCertificates && (
+          <>
+            <div className="filter-buttons">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
+                  onClick={() => setActiveFilter(filter)}
+                >
+                  <Code2 size={16} />
+                  <span>{filter}</span>
+                </button>
+              ))}
+            </div>
 
-                <div className="projects-grid">
-                  {filteredProjects.map((project, index) => {
-                    const CategoryIcon = getCategoryIcon(project.category);
-                    return (
-                        <div key={index} className="project-card">
-                          <div className="project-image">
-                            <img src={project.image} alt={project.title} />
-                            <div className="project-category">
-                              <CategoryIcon size={16} />
-                              <span>{project.category}</span>
-                            </div>
-                          </div>
-
-                          <div className="project-content">
-                            <h3>{project.title}</h3>
-                            <p>{project.description}</p>
-
-                            <div className="project-tech">
-                              {project.technologies.map((tech, techIndex) => (
-                                  <span key={techIndex} className="tech-tag">
-                            {tech}
-                          </span>
-                              ))}
-                            </div>
-
-                            <div className="project-actions">
-                              <a href={project.live} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
-                                <ExternalLink size={18} />
-                                <span>Live Demo</span>
-                              </a>
-                              <a href={project.github} target="_blank" rel="noopener noreferrer" className="modern-btn secondary">
-                                <Github size={18} />
-                                <span>Source Code</span>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                    );
-                  })}
-                </div>
-              </>
-          )}
-
-          {showCertificates && (
-              <div className="projects-grid">
-                {certificates.map((certificate, index) => (
-                    <div key={index} className="project-card certificate-card">
-                      <div className="project-image certificate-image">
-                        <div className="certificate-icon">
-                          <img src={certificate.image} alt={certificate.title}/>
-                        </div>
-                        <div className="project-category certificate-category">
-                          <Calendar size={16} />
-                          <span>{certificate.completedDate}</span>
-                        </div>
-                      </div>
-
-                      <div className="project-content">
-                        <div className="certificate-issuer">{certificate.issuer}</div>
-                        <h3>{certificate.title}</h3>
-                        <p>{certificate.description}</p>
-                        <p className="certificate-details">{certificate.details}</p>
-
-                        <div className="project-tech">
-                          {certificate.skills.map((skill, skillIndex) => (
-                              <span key={skillIndex} className="tech-tag">
-                        {skill}
-                      </span>
-                          ))}
-                        </div>
-
-                        <div className="project-actions">
-                          <a
-                              href={certificate.certificateLink}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="modern-btn primary"
-                              onClick={(e) => {
-                                console.log('Clicking certificate link:', certificate.certificateLink);
-                              }}
-                          >
-                            <Award size={18}/>
-                            <span>View Certificate</span>
-                          </a>
-                        </div>
+            <div className="projects-grid">
+              {filteredProjects.map((project, index) => {
+                const CategoryIcon = getCategoryIcon(project.category);
+                return (
+                  <div key={index} className="project-card">
+                    <div className="project-image">
+                      <img src={project.image} alt={project.title} />
+                      <div className="project-category">
+                        <CategoryIcon size={16} />
+                        <span>{project.category}</span>
                       </div>
                     </div>
-                ))}
+
+                    <div className="project-content">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+
+                      <div className="project-tech">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span key={techIndex} className="tech-tag">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="project-actions">
+                        <a href={project.live} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
+                          <ExternalLink size={18} />
+                          <span>Live Demo</span>
+                        </a>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="modern-btn secondary">
+                          <Github size={18} />
+                          <span>Source Code</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        {showCertificates && (
+          <div className="projects-grid">
+            {certificates.map((certificate, index) => (
+              <div key={index} className="project-card certificate-card">
+                <div className="project-image certificate-image">
+                  <div className="certificate-icon">
+                    <img src={certificate.image} alt={certificate.title}/>
+                  </div>
+                  <div className="project-category certificate-category">
+                    <Calendar size={16} />
+                    <span>{certificate.completedDate}</span>
+                  </div>
+                </div>
+
+                <div className="project-content">
+                  <div className="certificate-issuer">{certificate.issuer}</div>
+                  <h3>{certificate.title}</h3>
+                  <p>{certificate.description}</p>
+                  <p className="certificate-details">{certificate.details}</p>
+
+                  <div className="project-tech">
+                    {certificate.skills.map((skill, skillIndex) => (
+                      <span key={skillIndex} className="tech-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="project-actions">
+                    <a href={certificate.certificateLink} target="_blank" rel="noopener noreferrer" className="modern-btn primary">
+                      <Award size={18} />
+                      <span>View Certificate</span>
+                    </a>
+                  </div>
+                </div>
               </div>
-          )}
-        </div>
-      </section>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 
