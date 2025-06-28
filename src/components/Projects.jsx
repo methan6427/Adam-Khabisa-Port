@@ -128,7 +128,7 @@ const Projects = () => {
       completedDate: "May 24, 2025",
       issuer: "Udacity",
       details: "Construct responsive websites using CSS, Flexbox, and CSS Grid. Develop interactive websites and UI applications using JavaScript and HTML. Connect web applications to backend server data using JavaScript.",
-      certificateLink: "www.udacity.com/certificate/e/033178aa-edf1-11ef-9ea3-cbae88ad59d9",
+      certificateLink: "https://www.udacity.com/certificate/e/033178aa-edf1-11ef-9ea3-cbae88ad59d9",
       image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/FE.png?raw=true"
     },
     {
@@ -139,7 +139,7 @@ const Projects = () => {
       completedDate: "February 13, 2025",
       issuer: "Udacity",
       details: "Built websites using HTML and CSS, created Python-based games and applications, developed a Mad Libs-style game using Python functions, and completed an interactive resume webpage as the final project.",
-      certificateLink: "www.udacity.com/certificate/e/dabdce6a-899f-11ef-9878-877c1bca966b",
+      certificateLink: "https://www.udacity.com/certificate/e/dabdce6a-899f-11ef-9878-877c1bca966b",
       image: "https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/ITP.png?raw=true"
     }
   ];
