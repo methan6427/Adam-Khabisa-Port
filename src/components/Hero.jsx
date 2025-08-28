@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="hero-content">
         <div className="profile-image float">
           <img 
-            src="https://media.licdn.com/dms/image/v2/D4E03AQENtvMLbvrSFA/profile-displayphoto-shrink_800_800/B4EZQUrGFGHgAg-/0/1735513630898?e=1756339200&v=beta&t=krsflQBwsmVhnW86J5DFEohDZqxYFRKh3njhGs5MSxE" 
+            src="https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/PFP.jpg?raw=true" 
             alt="Adam Khabisa"
           />
         </div>
