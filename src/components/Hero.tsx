@@ -88,8 +88,8 @@ const Hero = () => {
               className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border-4 border-cyan-400/30 flex items-center justify-center overflow-hidden"
             >
               <img
-                  src="https://media.licdn.com/dms/image/v2/D4E03AQENtvMLbvrSFA/profile-displayphoto-shrink_800_800/B4EZQUrGFGHgAg-/0/1735513630898?e=1756339200&v=beta&t=krsflQBwsmVhnW86J5DFEohDZqxYFRKh3njhGs5MSxE"
-                  alt="Adam Khabisa"
+                src="https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/PFP.jpg?raw=true" 
+                alt="Adam Khabisa"
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
