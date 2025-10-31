@@ -15,7 +15,8 @@ const Hero = () => {
       <div className="hero-content">
         <div className="profile-image float">
          <img 
-           src={`${process.env.PUBLIC_URL}/prjPics/PFP.jpg`} alt="Adam Khabisa"
+           src="/prjPics/PFP.jpg" 
+           alt="Adam Khabisa"
          />
         </div>
         
