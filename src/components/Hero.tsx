@@ -87,11 +87,9 @@ const Hero = () => {
               ref={photoRef}
               className="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border-4 border-cyan-400/30 flex items-center justify-center overflow-hidden"
             >
-              <img
-                src="https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/PFP.jpg?raw=true" 
-                alt="Adam Khabisa"
-                className="w-full h-full object-cover rounded-full"
-              />
+                <img 
+                   src={`${process.env.PUBLIC_URL}/prjPics/PFP.jpg`} alt="Adam Khabisa"
+                />
             </div>
           </div>
 
