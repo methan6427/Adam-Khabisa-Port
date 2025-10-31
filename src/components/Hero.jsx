@@ -14,10 +14,9 @@ const Hero = () => {
     <section id="home" className="hero">
       <div className="hero-content">
         <div className="profile-image float">
-          <img 
-            src="https://github.com/methan6427/Adam-Khabisa-Port/blob/main/public/prjPics/PFP.jpg?raw=true" 
-            alt="Adam Khabisa"
-          />
+         <img 
+           src={`${process.env.PUBLIC_URL}/prjPics/PFP.jpg`} alt="Adam Khabisa"
+         />
         </div>
         
         <h1 className="hero-title fade-in-up">
