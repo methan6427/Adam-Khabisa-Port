@@ -1,40 +1,54 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Send } from 'lucide-react';
+import { Mail, Phone, Send, LucideIcon } from 'lucide-react';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
+
+interface ContactInfo {
+  title: string;
+  value: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
 
-  const [isSending, setIsSending] = useState(false);
+  const [isSending, setIsSending] = useState<boolean>(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
 
     emailjs
         .send(
-            'service_Adport', //  EmailJS service ID
-            'template_ry4i4pb', // EmailJS template ID
+            'service_Adport',
+            'template_ry4i4pb',
             {
               name: formData.name,
               email: formData.email,
               subject: formData.subject,
               message: formData.message
             },
-            'RlY99OaNDBHpqXxkj' // EmailJS public key
+            'RlY99OaNDBHpqXxkj'
         )
         .then(
             (response) => {
@@ -50,7 +64,7 @@ const Contact = () => {
         .finally(() => setIsSending(false));
   };
 
-  const contactInfo = [
+  const contactInfo: ContactInfo[] = [
     {
       title: 'Email',
       value: 'adamkh0698@gmail.com',

@@ -1,11 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Github, Linkedin, Facebook, Instagram, LucideIcon } from 'lucide-react';
 import './Navigation.css';
 
-const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+interface SocialLink {
+  name: string;
+  href: string;
+  icon: LucideIcon;
+}
+
+const Navigation: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +20,7 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
@@ -23,7 +28,7 @@ const Navigation = () => {
     }
   };
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/in/adam-khabisa-4a9677279/', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/methan6427', icon: Github },
     { name: 'Facebook', href: 'https://www.facebook.com/adam.khabisa.64', icon: Facebook },

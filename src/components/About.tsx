@@ -1,10 +1,14 @@
-
 import React from 'react';
-import { Code2, Palette, Database, Monitor, Globe, Smartphone } from 'lucide-react';
+import { Code2, Palette, Database, Monitor, Globe, LucideIcon } from 'lucide-react';
 import './About.css';
 
-const About = () => {
-  const skills = [
+interface Skill {
+  name: string;
+  icon: LucideIcon;
+}
+
+const About: React.FC = () => {
+  const skills: Skill[] = [
     { name: 'React.js', icon: Code2 },
     { name: 'JavaScript', icon: Code2 },
     { name: 'Java', icon: Code2 },

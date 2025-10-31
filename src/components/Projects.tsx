@@ -1,12 +1,35 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Code2, Palette, Database, Monitor, Award, Calendar } from 'lucide-react';
+import { Github, ExternalLink, Code2, Palette, Database, Monitor, Award, Calendar, LucideIcon } from 'lucide-react';
 import './Projects.css';
 
-const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const [showCertificates, setShowCertificates] = useState(false); // Changed to boolean for checkbox
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  github: string;
+  live: string;
+  category: string;
+}
 
-  const projects = [
+interface Certificate {
+  id: number;
+  title: string;
+  description: string;
+  skills: string[];
+  completedDate: string;
+  issuer: string;
+  details: string;
+  certificateLink: string;
+  image: string;
+}
+
+const Projects: React.FC = () => {
+  const [activeFilter, setActiveFilter] = useState<string>('All');
+  const [showCertificates, setShowCertificates] = useState<boolean>(false);
+
+  const projects: Project[] = [
     {
       id: 1,
       title: "Compressing using Huffman",
@@ -119,7 +142,7 @@ const Projects = () => {
     }
   ];
 
-  const certificates = [
+  const certificates: Certificate[] = [
     {
       id: 1,
       title: "Front End Web Developer Nanodegree (FEND)",
@@ -144,9 +167,9 @@ const Projects = () => {
     }
   ];
 
-  const filters = ['All', 'Web Development', 'Desktop Development', 'UI/UX Design', 'Programming'];
+  const filters: string[] = ['All', 'Web Development', 'Desktop Development', 'UI/UX Design', 'Programming'];
 
-  const getCategoryIcon = (category) => {
+  const getCategoryIcon = (category: string): LucideIcon => {
     switch (category) {
       case 'Web Development': return Code2;
       case 'UI/UX Design': return Palette;
@@ -197,10 +220,10 @@ const Projects = () => {
             </div>
 
             <div className="projects-grid">
-              {filteredProjects.map((project, index) => {
+              {filteredProjects.map((project) => {
                 const CategoryIcon = getCategoryIcon(project.category);
                 return (
-                  <div key={index} className="project-card">
+                  <div key={project.id} className="project-card">
                     <div className="project-image">
                       <img src={project.image} alt={project.title} />
                       <div className="project-category">
@@ -241,8 +264,8 @@ const Projects = () => {
 
         {showCertificates && (
           <div className="projects-grid">
-            {certificates.map((certificate, index) => (
-              <div key={index} className="project-card certificate-card">
+            {certificates.map((certificate) => (
+              <div key={certificate.id} className="project-card certificate-card">
                 <div className="project-image certificate-image">
                   <div className="certificate-icon">
                     <img src={certificate.image} alt={certificate.title}/>

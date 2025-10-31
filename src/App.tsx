@@ -1,11 +1,11 @@
 
 import React from 'react';
-import Hero from './components/Hero.jsx';
-import About from './components/About.jsx';
-import Projects from './components/Projects.jsx';
-import Contact from './components/Contact.jsx';
-import Navigation from './components/Navigation.jsx';
-import AnimatedBackground from './components/AnimatedBackground.jsx';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Navigation from './components/Navigation';
+import AnimatedBackground from './components/AnimatedBackground';
 import './App.css';
 
 function App() {

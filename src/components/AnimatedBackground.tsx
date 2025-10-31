@@ -1,13 +1,14 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-const AnimatedBackground = () => {
-  const containerRef = useRef(null);
+const AnimatedBackground: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
-    const particles = [];
+    if (!container) return;
+
+    const particles: HTMLDivElement[] = [];
 
     // Create particles
     for (let i = 0; i < 50; i++) {
@@ -20,7 +21,7 @@ const AnimatedBackground = () => {
     }
 
     // Animate particles
-    particles.forEach((particle, index) => {
+    particles.forEach((particle) => {
       gsap.set(particle, {
         scale: Math.random() * 2 + 0.5,
         opacity: Math.random() * 0.8 + 0.2
@@ -45,7 +46,7 @@ const AnimatedBackground = () => {
     });
 
     // Floating geometric shapes
-    const shapes = [];
+    const shapes: HTMLDivElement[] = [];
     for (let i = 0; i < 5; i++) {
       const shape = document.createElement('div');
       shape.style.position = 'absolute';
